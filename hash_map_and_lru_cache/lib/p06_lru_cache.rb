@@ -17,7 +17,7 @@ class LRUCache
 <<<<<<< HEAD
     (1...@max).each { |i| @prc.call(i) }
 =======
->>>>>>> b6031a62a537f47e8f7c0139b8fa5e5280ba4662
+>>>>>>> parent of e54dcae... Finalize workflow for W2D5
   end
 
   def to_s
