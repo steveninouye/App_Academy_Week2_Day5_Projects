@@ -14,7 +14,10 @@ class LRUCache
   end
 
   def get(key)
+<<<<<<< HEAD
     (1...@max).each { |i| @prc.call(i) }
+=======
+>>>>>>> b6031a62a537f47e8f7c0139b8fa5e5280ba4662
   end
 
   def to_s
