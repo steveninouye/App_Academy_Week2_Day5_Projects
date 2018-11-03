@@ -14,6 +14,7 @@ class LRUCache
   end
 
   def get(key)
+    (1...@max).each { |i| @prc.call(i) }
   end
 
   def to_s
