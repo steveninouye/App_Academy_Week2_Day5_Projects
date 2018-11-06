@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 require "byebug"
 
-
-=======
->>>>>>> b6031a62a537f47e8f7c0139b8fa5e5280ba4662
 class Node
   attr_reader :key
   attr_accessor :val, :next, :prev
@@ -22,19 +18,16 @@ class Node
   def remove
     # optional but useful, connects previous link to next link
     # and removes self from list.
-<<<<<<< HEAD
     p = @prev
     n = @next
     n.prev = p
     p.next = n
     @next, @prev = nil, nil
-=======
->>>>>>> b6031a62a537f47e8f7c0139b8fa5e5280ba4662
   end
 end
 
 class LinkedList
-<<<<<<< HEAD
+
   include Enumerable
 
   def initialize
@@ -42,9 +35,6 @@ class LinkedList
     @tail = Node.new
     @head.next = @tail   # oldest
     @tail.prev = @head   # newest
-=======
-  def initialize
->>>>>>> b6031a62a537f47e8f7c0139b8fa5e5280ba4662
   end
 
   def [](i)
@@ -52,7 +42,6 @@ class LinkedList
     nil
   end
 
-<<<<<<< HEAD
   # oldest
   def first
     @head.next
@@ -114,37 +103,4 @@ class LinkedList
   def to_s
     inject([]) { |acc, link| acc << "[#{link.key}, #{link.val}]" }.join(", ")
   end
-=======
-  def first
-  end
-
-  def last
-  end
-
-  def empty?
-  end
-
-  def get(key)
-  end
-
-  def include?(key)
-  end
-
-  def append(key, val)
-  end
-
-  def update(key, val)
-  end
-
-  def remove(key)
-  end
-
-  def each
-  end
-
-  # uncomment when you have `each` working and `Enumerable` included
-  # def to_s
-  #   inject([]) { |acc, link| acc << "[#{link.key}, #{link.val}]" }.join(", ")
-  # end
->>>>>>> b6031a62a537f47e8f7c0139b8fa5e5280ba4662
 end
