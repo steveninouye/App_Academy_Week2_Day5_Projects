@@ -57,10 +57,8 @@ class LinkedList
   end
 
   def get(key)
-    return nil if empty?
-    node = @tail.prev
-    node = node.prev until node.key == key || !node.prev
-    node.prev ? node.val : nil
+    each {|node| return node.val if node.key == key}
+    nil
   end
 
   def include?(key)
@@ -72,30 +70,23 @@ class LinkedList
     new_node = Node.new(key, val)
     old_last = last
     new_node.prev, new_node.next = old_last, @tail
-    @tail.prev = new_node
-    old_last.next = new_node
+    @tail.prev, old_last.next = new_node, new_node
   end
 
   def update(key, val)
-    return if empty?
-    node = first
-    node = node.next until node.key == key
-    node.val = val
+    each {|node| node.val = val if node.key == key}
   end
 
   def remove(key)
-    return if empty?
-    node = first
-    node = node.next until node.key == key || !node.next
-    node.remove if node.next
+    each { |node| node.remove if node.key == key }
   end
 
   def each(&prc)
-    return if empty?
     node = @head.next
-    until node.next.nil?
+    until node == @tail
+      next_node = node.next
       prc.call(node)
-      node = node.next
+      node = next_node
     end
   end
 
