@@ -1,9 +1,7 @@
 require 'rspec'
 require 'p01_int_set'
-<<<<<<< HEAD
+
 require "byebug"
-=======
->>>>>>> b6031a62a537f47e8f7c0139b8fa5e5280ba4662
 
 describe MaxIntSet do
   let(:set) { MaxIntSet.new(50) }
@@ -160,10 +158,6 @@ describe ResizingIntSet do
 
     it "should not change the count of the set" do
       elements = (10..30).to_a
-<<<<<<< HEAD
-      # byebug
-=======
->>>>>>> b6031a62a537f47e8f7c0139b8fa5e5280ba4662
       elements.each { |el| set.insert(el) }
       expect(set.count).to eq(elements.count)
     end
